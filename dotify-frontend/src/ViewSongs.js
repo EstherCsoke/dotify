@@ -23,10 +23,13 @@ const ViewSongs = () => {
     function renderSongs(){
         return (
             <>
+            <Link to={`/new`}>Add a Song</Link>
             {songs.map((song, index) => (
                     <li key={`${song}-${index}`}>
                         {index}. {song.title} by {song.artist}
-                        <Link to={`/songs/${song.id}`}>View</Link>
+                        <Link to={`/songs/${song.id}`}>View</Link>&nbsp;
+                        <Link to={`/songs/${song.id}/edit`}>Edit</Link>
+
                         <DeleteSong 
                             songId={song.id}
                             onDelete={() => setSongs(songs.filter((s, i) => s.id !== song.id))}

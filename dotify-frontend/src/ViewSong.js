@@ -28,7 +28,8 @@ const ViewSong = (props) => {
                 <h2>Loading...</h2>
             }
             <Link to="/">View all songs</Link>
-            
+            <Link to={`/songs/${song.id}/edit`}>Edit</Link>
+
         </div>
     )
 }
